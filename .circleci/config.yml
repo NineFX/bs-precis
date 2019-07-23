@@ -34,7 +34,7 @@ jobs:
             yarn install &&
             yarn build && 
             mkdir -p /tmp/artifacts && 
-            yarn jest --silent  --coverage --coverageDirectory=/tmp/artifacts/ --json --output-file=/tmp/artifacts/results.json
+            yarn jest 
       - codecov/upload:
           file: coverage/**.json
       - store_artifacts:
