@@ -36,9 +36,9 @@ jobs:
             mkdir -p /tmp/artifacts && 
             yarn jest 
       - codecov/upload:
-          file: /home/circleci/bs-precis/coverage/coverage-final.json
+          file: /home/circleci/bs-precis/coverage/*.json
       - store_artifacts:
-          path: ./coverage/
+          path: ./coverage/*.json
 workflows:
   version: 2.1
   build:
