@@ -1,10 +1,12 @@
 # bs-precis
 
-A library implementing `Precis` and tested against [`precis_i18n`](https://github.com/byllyfish/precis_i18n).
+[![CircleCI](https://circleci.com/gh/NineFX/bs-precis.svg?style=shield)]
 
-`golden.json` is a file belonging to [`precis_i18n`](https://github.com/byllyfish/precis_i18n).
+A ReasonML library implementing PRECIS RFCs:
 
-[![CircleCI](https://circleci.com/gh/NineFX/bs-precis.svg?style=svg)]
+* [RFC8264](https://tools.ietf.org/html/rfc8264)
+* [RFC8265](https://tools.ietf.org/html/rfc8265)
+* [RFC8266](https://tools.ietf.org/html/rfc8265)
 
 ## Install
 
@@ -14,7 +16,10 @@ yarn install
 
 ## Tests
 
-All tests use jest now. 
+All tests use `jest`. 
+
 ```
 yarn build && yarn jest --coverage;
 ```
+
+`bs-precis` is tested against the `golden.json` test suites from [`precis_i18n`](https://github.com/byllyfish/precis_i18n).
