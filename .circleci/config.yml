@@ -1,6 +1,6 @@
 defaults: &defaults
   shell: /bin/sh
-  working_directory: /home/circleci/bs-strophe
+  working_directory: /home/circleci/bs-precis
   docker:
     - image: circleci/node  
 
