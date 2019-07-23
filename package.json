@@ -31,6 +31,8 @@
       "node_modules",
       "PrecisI18nTests",
       "TestUtils*"
-    ]
+    ],
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }
