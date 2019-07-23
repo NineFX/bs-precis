@@ -1,6 +1,6 @@
 # bs-precis
 
-[![CircleCI](https://circleci.com/gh/NineFX/bs-precis.svg?style=shield)]
+[![CircleCI](https://circleci.com/gh/NineFX/bs-precis.svg?style=shield)](https://circleci.com/gh/NineFX/bs-precis)
 
 A ReasonML library implementing PRECIS RFCs:
 
