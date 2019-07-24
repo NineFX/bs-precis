@@ -30,7 +30,8 @@
     "testPathIgnorePatterns": [
       "node_modules",
       "PrecisI18nTests",
-      "TestUtils*"
+      "TestUtils*",
+      "Golden*"
     ],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
