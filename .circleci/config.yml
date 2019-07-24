@@ -31,12 +31,9 @@ jobs:
       - run:
           name: Test
           command: |
-            yarn install &&
-            yarn build && 
-            mkdir -p /tmp/artifacts && 
-            yarn jest 
+            yarn jest || true 
       - codecov/upload:
-          file: /home/circleci/bs-precis/coverage/*.json
+          file: /home/circleci/bs-precis/coverage/coverage-final.json
       - store_artifacts:
           path: ./coverage
 workflows:
