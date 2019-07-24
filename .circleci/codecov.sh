@@ -6,7 +6,7 @@ yarn jest
 EXITCODE=$?
 
 # Upload to CodeCov
-bash <(curl -s https://codecov.io/bash) -f ./coverage/coverage-final.json
+./node_modules/.bin/codecov
 
 exit $EXITCODE
 popd
