@@ -5,7 +5,6 @@ pushd $SCRIPT_DIR/..
 yarn jest
 EXITCODE=$?
 
-bash<(curl -s https://codecov.io/bash)
 # Upload to CodeCov
 bash <(curl -s https://codecov.io/bash) -f ./coverage/coverage.json
 
