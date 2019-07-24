@@ -1,6 +1,6 @@
 defaults: &defaults
   shell: /bin/sh
-  working_directory: /home/circleci/bs-strophe
+  working_directory: /home/circleci/bs-precis
   docker:
     - image: circleci/node  
 
@@ -34,11 +34,11 @@ jobs:
             yarn install &&
             yarn build && 
             mkdir -p /tmp/artifacts && 
-            yarn jest --silent  --coverage --coverageDirectory=/tmp/artifacts/ --json --output-file=/tmp/artifacts/results.json
+            yarn jest 
       - codecov/upload:
-          file: coverage/**.json
+          file: /home/circleci/bs-precis/coverage/*.json
       - store_artifacts:
-          path: /tmp/artifacts
+          path: ./coverage
 workflows:
   version: 2.1
   build:
