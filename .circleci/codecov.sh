@@ -6,7 +6,7 @@ yarn jest
 EXITCODE=$?
 
 # Upload to CodeCov
-./node_modules/.bin/codecov
+./node_modules/.bin/codecov -f /home/circleci/bs-precis/coverage/coverage-final.json
 
 exit $EXITCODE
 popd
