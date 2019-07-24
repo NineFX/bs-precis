@@ -31,7 +31,9 @@
       "node_modules",
       "PrecisI18nTests",
       "TestUtils*",
-      "Golden*"
+      "Golden*",
+      "Codec*",
+      "PrecisUnit*"
     ],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
