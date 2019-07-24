@@ -38,7 +38,7 @@ jobs:
       - codecov/upload:
           file: /home/circleci/bs-precis/coverage/*.json
       - store_artifacts:
-          path: ./coverage/*.json
+          path: ./coverage
 workflows:
   version: 2.1
   build:
