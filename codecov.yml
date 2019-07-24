@@ -12,3 +12,5 @@ coverage:
     project: yes
     patch: yes
     changes: no
+fixes:
+  - "lib/js/src/::src/"
