@@ -6,9 +6,6 @@ defaults: &defaults
 
 version: 2.1
 
-orbs:
-  codecov: codecov/codecov@1.0.2
-
 jobs:
   build:
     <<: *defaults
@@ -30,10 +27,7 @@ jobs:
           at: /home/circleci/bs-precis
       - run:
           name: Test
-          command: |
-            yarn jest || true 
-      - codecov/upload:
-          file: /home/circleci/bs-precis/coverage/coverage-final.json
+          command: bash .circleci/codecov.sh 
       - store_artifacts:
           path: ./coverage
 workflows:
