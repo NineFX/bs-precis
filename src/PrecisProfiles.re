@@ -15,11 +15,12 @@ let bidi = (codePointList: list(PrecisUtils.codePoint)) => {
 };
 
 let usernameCaseMapped = (codePointList: list(PrecisUtils.codePoint)) => {
-  let widthMap = PrecisMapping.mapWidth(codePointList);
-  let caseMapped = PrecisMapping.toLower(widthMap);
-  let nfc = PrecisUnorm.nfc(caseMapped);
-  bidi(nfc)
-    ? switch (PrecisClasses.identifierEnforce(nfc)) {
+  let str = codePointList
+    |> PrecisMapping.mapWidth
+    |> PrecisMapping.toLower
+    |> PrecisUnorm.nfc;
+  bidi(str)
+    ? switch (PrecisClasses.identifierEnforce(str)) {
       | exception (PrecisUtils.PrecisError(PrecisUtils.Disallowed)) =>
         raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
       | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
@@ -30,10 +31,11 @@ let usernameCaseMapped = (codePointList: list(PrecisUtils.codePoint)) => {
 };
 
 let usernameCasePreserved = (codePointList: list(PrecisUtils.codePoint)) => {
-  let widthMap = PrecisMapping.mapWidth(codePointList);
-  let nfc = PrecisUnorm.nfc(widthMap);
-  bidi(nfc)
-    ? switch (PrecisClasses.identifierEnforce(nfc)) {
+  let str = codePointList
+  |> PrecisMapping.mapWidth
+  |> PrecisUnorm.nfc;
+  bidi(str)
+    ? switch (PrecisClasses.identifierEnforce(str)) {
       | exception (PrecisUtils.PrecisError(PrecisUtils.Disallowed)) =>
         raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
       | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
@@ -44,9 +46,11 @@ let usernameCasePreserved = (codePointList: list(PrecisUtils.codePoint)) => {
 };
 
 let opaqueString = (codePointList: list(PrecisUtils.codePoint)) => {
-  let additionalMapping = PrecisMapping.additionalMapping(codePointList);
-  let nfc = PrecisUnorm.nfc(additionalMapping);
-  switch (PrecisClasses.freeformEnforce(nfc)) {
+  let str = codePointList
+  |> PrecisMapping.spaceMap
+  |> PrecisMapping.additionalMapping
+  |> PrecisUnorm.nfc;
+  switch (PrecisClasses.freeformEnforce(str)) {
   | exception (PrecisUtils.PrecisError(PrecisUtils.Disallowed)) =>
     raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
   | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
