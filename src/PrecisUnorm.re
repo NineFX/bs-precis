@@ -7,7 +7,7 @@
  ** Licensed under the MIT & GPL license.
  */
 [@bs.val] [@bs.module "unorm"]
-external nfc: string /* str */ => string = "";
+external nfc: string /* str */ => string = "nfc";
 let nfcString = nfc;
 let nfc = (codePointList: list(PrecisUtils.codePoint)) => {
   codePointList
@@ -16,7 +16,7 @@ let nfc = (codePointList: list(PrecisUtils.codePoint)) => {
   |> PrecisUtils.toCodePointList;
 };
 
-[@bs.val] [@bs.module "unorm"] external nfkc: string /* str */ => string = "";
+[@bs.val] [@bs.module "unorm"] external nfkc: string /* str */ => string = "nfkc";
 let nfkcString = nfkc;
 let nfkc = (codePointList: list(PrecisUtils.codePoint)) => {
   codePointList
