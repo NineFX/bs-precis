@@ -36,7 +36,7 @@ let stripSpaces = (codePoints: list(PrecisUtils.codePoint)) => {
   };
   let rec stripDoubles = (newList, oldList) => {
     switch oldList {
-      | [head, ...tail] when (List.mem(head, spaces)) => stripDoubles([head] @ newList, stripFrontSpaces(tail))
+      | [head, ...tail] when (List.mem(head, spaces)) => stripDoubles([space] @ newList, stripFrontSpaces(tail))
       | [head, ...tail] => stripDoubles( [head] @ newList, tail)
       | [] => newList
       };
