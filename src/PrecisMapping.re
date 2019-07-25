@@ -26,6 +26,22 @@ let spaces = [
 
 let space = 0x20;
 
+let stripSpaces = (codePoints: list(PrecisUtils.codePoint)) => {
+  let rec stripFrontSpaces = codePoints => {
+    switch codePoints {
+      | [head, ...tail] when List.mem(head, spaces) => stripFrontSpaces(tail)
+      | _ => codePoints
+      };
+  };
+  let rec stripDoubles = (new, old) => {
+    switch codePoints {
+      | [head, ...tail] when List.mem(head, spaces) => stripDoubles([head] @ new, stripFrontSpaces(tail))
+      | [head, ...tail] => stripDoubles(tail, [head] @ new)
+      | [] => new
+  };
+  codePoints |> stripFrontSpaces |> List.rev |> stripFrontSpaces |> stripDoubles([]);
+};
+
 let maybeMapWidth = (x: PrecisUtils.codePoint) =>
   switch (x) {
   // Fullwidth ASCII

@@ -31,10 +31,7 @@
     "testPathIgnorePatterns": [
       "node_modules",
       "PrecisI18nTests",
-      "TestUtils*",
-      "Golden*",
-      "Codec*",
-      "PrecisUnit*"
+      "TestUtils*"
     ],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true
