@@ -167,6 +167,13 @@ let trim = (codePointList: list(PrecisUtils.codePoint)) => {
   aux(codePointList, []);
 };
 
+let lastLetterMap = (point: PrecisUtils.codePoint) =>
+  switch point {
+    | 931
+    | 963 => 962
+    | x => x
+  };
+
 let lowerCaseMap = (point: PrecisUtils.codePoint) =>
   if (point < 7788) {
     if (point < 1152) {
@@ -1240,6 +1247,7 @@ let lowerCaseMap = (point: PrecisUtils.codePoint) =>
               } else {
                 switch (point) {
                 | 975 => 983
+                | 979 => 973
                 | 984 => 985
                 | point => point
                 };
@@ -5802,6 +5810,14 @@ let lowerCaseMap = (point: PrecisUtils.codePoint) =>
     };
   };
 
+let rec replaceTrailers = (newList, codePointList) => {
+  switch codePointList {
+    | [space, x, ...tail] => replaceTrailers([x |> lastLetterMap, space] @ newList, tail)
+    | [x, ...tail] => replaceTrailers([x] @ newList, tail)
+    | [] => List.rev(newList)
+  }
+};
+
 let toLower = (codePointList: list(PrecisUtils.codePoint)) => {
-  List.map(lowerCaseMap, codePointList);
+  codePointList |> List.map(lowerCaseMap) |> replaceTrailers([]);
 };

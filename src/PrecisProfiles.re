@@ -60,10 +60,12 @@ let opaqueString = (codePointList: list(PrecisUtils.codePoint)) => {
 };
 
 let nickname = (codePointList: list(PrecisUtils.codePoint)) => {
-  let nospace = PrecisMapping.stripSpaces(codePointList);
-  let lower = PrecisMapping.toLower(nospace);
-  let nfkc = PrecisUnorm.nfkc(lower);
-  switch (PrecisClasses.freeformEnforce(nfkc)) {
+  let str = codePointList
+    |> PrecisMapping.spaceMap
+    |> PrecisMapping.stripSpaces
+    |> PrecisMapping.toLower
+    |> PrecisUnorm.nfkc;
+  switch (PrecisClasses.freeformEnforce(str)) {
   | exception (PrecisUtils.PrecisError(PrecisUtils.Disallowed)) =>
     raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
   | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
