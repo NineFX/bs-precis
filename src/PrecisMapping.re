@@ -6,6 +6,7 @@
  */
 
 let spaces = [
+  0x20,
   0x00A0,
   0x1680,
   0x2000,
@@ -25,6 +26,23 @@ let spaces = [
 ];
 
 let space = 0x20;
+
+let stripSpaces = (codePoints: list(PrecisUtils.codePoint)) => {
+  let rec stripFrontSpaces = (codePoints) => {
+    switch (codePoints) {
+      | [head, ...tail] when (List.mem(head, spaces)) => stripFrontSpaces(tail)
+      | _ => codePoints
+      };
+  };
+  let rec stripDoubles = (newList, oldList) => {
+    switch oldList {
+      | [head, ...tail] when (List.mem(head, spaces)) => stripDoubles([space] @ newList, stripFrontSpaces(tail))
+      | [head, ...tail] => stripDoubles( [head] @ newList, tail)
+      | [] => newList
+      };
+  };
+  codePoints |> stripFrontSpaces |> List.rev |> stripFrontSpaces |> stripDoubles([]);
+};
 
 let maybeMapWidth = (x: PrecisUtils.codePoint) =>
   switch (x) {
@@ -148,6 +166,13 @@ let trim = (codePointList: list(PrecisUtils.codePoint)) => {
   };
   aux(codePointList, []);
 };
+
+let lastLetterMap = (point: PrecisUtils.codePoint) =>
+  switch point {
+    | 931
+    | 963 => 962
+    | x => x
+  };
 
 let lowerCaseMap = (point: PrecisUtils.codePoint) =>
   if (point < 7788) {
@@ -1222,6 +1247,7 @@ let lowerCaseMap = (point: PrecisUtils.codePoint) =>
               } else {
                 switch (point) {
                 | 975 => 983
+                | 979 => 973
                 | 984 => 985
                 | point => point
                 };
@@ -5784,6 +5810,14 @@ let lowerCaseMap = (point: PrecisUtils.codePoint) =>
     };
   };
 
+let rec replaceTrailers = (newList, codePointList) => {
+  switch codePointList {
+    | [space, x, ...tail] => replaceTrailers([x |> lastLetterMap, space] @ newList, tail)
+    | [x, ...tail] => replaceTrailers([x] @ newList, tail)
+    | [] => List.rev(newList)
+  }
+};
+
 let toLower = (codePointList: list(PrecisUtils.codePoint)) => {
-  List.map(lowerCaseMap, codePointList);
+  codePointList |> List.map(lowerCaseMap) |> replaceTrailers([]);
 };
