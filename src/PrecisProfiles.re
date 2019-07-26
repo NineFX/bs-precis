@@ -88,4 +88,7 @@ let opaqueString = (s: string) =>
   |> PrecisUtils.fromCodePointList;
 
 let nickname = (s: string) =>
-  PrecisUtils.toCodePointList(s) |> nickname |> PrecisUtils.fromCodePointList;
+  PrecisUtils.toCodePointList(s) 
+  |> nickname 
+  |> nickname 
+  |> PrecisUtils.fromCodePointList;
