@@ -7,7 +7,7 @@ pushd $SCRIPT_DIR/..
 echo "Pass through"
 
 # Upload to CodeCov
-./node_modules/.bin/codecov -f /home/circleci/bs-precis/coverage/coverage-final.json
+./node_modules/.bin/codecov -f ~/bs-precis/coverage/coverage-final.json
 
 exit $EXITCODE
 popd
