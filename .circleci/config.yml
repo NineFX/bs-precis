@@ -27,7 +27,7 @@ jobs:
           at: /home/circleci/bs-precis
       - run:
           name: Test
-          command: yarn jest 
+          command: bash .circleci/codecov.sh 
       - store_artifacts:
           path: ./coverage
 workflows:
