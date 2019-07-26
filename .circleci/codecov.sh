@@ -2,7 +2,7 @@
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd -P)"
 EXITCODE=0
 pushd $SCRIPT_DIR/..
-(yarn jest || EXITCODE=$?) || true
+(yarn jest || EXITCODE=1) || true
 
 echo "Pass through"
 
