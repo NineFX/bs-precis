@@ -6,6 +6,7 @@
  */
 
 let spaces = [
+  0x20,
   0x00A0,
   0x1680,
   0x2000,
@@ -25,6 +26,23 @@ let spaces = [
 ];
 
 let space = 0x20;
+
+let stripSpaces = (codePoints: list(PrecisUtils.codePoint)) => {
+  let rec stripFrontSpaces = (codePoints) => {
+    switch (codePoints) {
+      | [head, ...tail] when (List.mem(head, spaces)) => stripFrontSpaces(tail)
+      | _ => codePoints
+      };
+  };
+  let rec stripDoubles = (newList, oldList) => {
+    switch oldList {
+      | [head, ...tail] when (List.mem(head, spaces)) => stripDoubles([space] @ newList, stripFrontSpaces(tail))
+      | [head, ...tail] => stripDoubles( [head] @ newList, tail)
+      | [] => newList
+      };
+  };
+  codePoints |> stripFrontSpaces |> List.rev |> stripFrontSpaces |> stripDoubles([]);
+};
 
 let maybeMapWidth = (x: PrecisUtils.codePoint) =>
   switch (x) {
