@@ -27,7 +27,16 @@ jobs:
           at: /home/circleci/bs-precis
       - run:
           name: Test
-          command: yarn jest 
+          command: yarn jest
+  code-cov:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: /home/circleci/bs-precis
+      - run:
+          name: Test
+          command: bash .circleci/codecov.sh 
       - store_artifacts:
           path: ./coverage
 workflows:
@@ -36,5 +45,8 @@ workflows:
     jobs:
       - build
       - test:
+          requires:
+            - build
+      - code-cov:
           requires:
             - build
