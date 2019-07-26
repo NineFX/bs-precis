@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "@glennsl/bs-json": "^4.0.0",
-    "buffer": "^5.2.1"
+    "buffer": "^5.2.1",
+    "codecov": "^3.5.0"
   },
   "jest": {
     "testRegex": "lib/js/__tests__/*",
