@@ -1,0 +1,1137 @@
+yarn run v1.15.2
+$ /Users/justinbaum/bs-precis/node_modules/.bin/jest
+PASS lib/js/__tests__/PrecisTests/NFCEncodingTests.bs.js
+PASS lib/js/__tests__/PrecisTests/CodecTest.bs.js
+PASS lib/js/__tests__/PrecisTests/PrecisUnitTests.bs.js
+FAIL lib/js/__tests__/PrecisTests/GoldenTests.bs.js
+  ● Golden Tests › UsernameCasePreserved Test: 
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ‌
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ‍
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ·l
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: l·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ruL·Lz
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: rul·ze
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ru·lze
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ͵
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ׳
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ״
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ・
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCasePreserved Test: ΨϓΧΗ
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: 
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: Σ
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "σ"
+    Received: "ς"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: σ
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "σ"
+    Received: "ς"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: Σ
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "σ"
+    Received: "ς"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: σ
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "σ"
+    Received: "ς"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: iİıI
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "ii̇ıi"
+    Received: "iiıi"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ‌
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ‍
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ·l
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: l·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: rul·ze
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ru·lze
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ͵
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ׳
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ״
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ・
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › UsernameCaseMapped Test: ΨϓΧΗ
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: 
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: 🄚evin
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › OpaqueString Test: 🄺evin
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › OpaqueString Test: 🅚evin
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › OpaqueString Test: 🅺evin
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › OpaqueString Test: 🇺🇸
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › OpaqueString Test: 👾
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › OpaqueString Test: 💚
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › OpaqueString Test: ‌
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: ‍
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: Juliet  Capulet
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Juliet  Capulet"
+    Received: "JulietCapulet"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: 'Juliet  Capulet'
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "'Juliet  Capulet'"
+    Received: "'JulietCapulet'"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: ·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: ·l
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: l·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: ruL·Lz
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: rul·ze
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: ru·lze
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: ·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: ͵
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: ׳
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: ״
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: ・
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: أ٠١٢٣٤٥٦٧٨٩۰
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › OpaqueString Test: أ۰۱۲۳۴۵۶۷۸۹٠
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: 
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test:  
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test:  
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: 🄚evin
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › NicknameCaseMapped Test: 🄺evin
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › NicknameCaseMapped Test: 🅚evin
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › NicknameCaseMapped Test: 🅺evin
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › NicknameCaseMapped Test: Σ
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "σ"
+    Received: "ς"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: σ
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "σ"
+    Received: "ς"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: Σ
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "σ"
+    Received: "ς"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: σ
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "σ"
+    Received: "ς"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: iİıI
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "ii̇ıi"
+    Received: "iiıi"
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:72:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: 🇺🇸
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › NicknameCaseMapped Test: 👾
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › NicknameCaseMapped Test: 💚
+
+    thrown: Array [
+      Array [
+        "PrecisUtils-BsPrecis.PrecisError",
+        6,
+      ],
+      0,
+    ]
+
+    Error: 
+
+      65 | 
+      66 | function testBuilder(elem) {
+    > 67 |   return Jest.test(elem[/* profile */0] + (" Test: " + elem[/* input */1]), (function (param) {
+         |               ^
+      68 |                 return testSingle(elem);
+      69 |               }));
+      70 | }
+
+      at new Spec (node_modules/jest-jasmine2/build/jasmine/Spec.js:116:22)
+      at Object.test$1 [as test] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:248:3)
+      at test (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:67:15)
+      at forEachU (node_modules/bs-platform/lib/js/belt_List.js:789:7)
+      at Object.forEach (node_modules/bs-platform/lib/js/belt_List.js:799:10)
+      at forEach (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:80:26)
+      at Object._1 (node_modules/bs-platform/lib/js/curry.js:65:12)
+      at Suite.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:288:17)
+      at Object.describe$1 [as describe] (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:287:3)
+      at Object.describe (lib/js/__tests__/PrecisTests/GoldenTests.bs.js:76:6)
+
+  ● Golden Tests › NicknameCaseMapped Test: ‌
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: ‍
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: ·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: ·l
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: l·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: rul·ze
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: ru·lze
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: ·
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: ͵
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: ׳
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: ״
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: ・
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: أ٠١٢٣٤٥٦٧٨٩۰
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+  ● Golden Tests › NicknameCaseMapped Test: أ۰۱۲۳۴۵۶۷۸۹٠
+
+    expect(received).toThrow()
+
+    Received function did not throw
+
+      at affirm (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:152:40)
+      at Object.<anonymous> (node_modules/@glennsl/bs-jest/lib/js/src/jest.js:249:11)
+
+------------------------|----------|----------|----------|----------|-------------------|
+File                    |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+------------------------|----------|----------|----------|----------|-------------------|
+All files               |    17.43 |    21.97 |    95.35 |    17.43 |                   |
+ PrecisBidi.bs.js       |     59.7 |       81 |      100 |     59.7 |... 1249,1253,1254 |
+ PrecisClasses.bs.js    |      100 |      100 |      100 |      100 |                   |
+ PrecisCodePoints.bs.js |    10.47 |     9.99 |      100 |    10.47 |... 7520,7526,7535 |
+ PrecisMapping.bs.js    |    12.61 |    11.77 |    91.67 |    12.61 |... 8117,8123,8126 |
+ PrecisProfiles.bs.js   |    89.33 |    75.76 |      100 |    89.33 |... 07,120,136,149 |
+ PrecisUnorm.bs.js      |       90 |      100 |       75 |       90 |                16 |
+ PrecisUtils.bs.js      |      100 |      100 |      100 |      100 |                   |
+------------------------|----------|----------|----------|----------|-------------------|
+Test Suites: 1 failed, 3 passed, 4 total
+Tests:       88 failed, 3213 passed, 3301 total
+Snapshots:   0 total
+Time:        5.7s
+Ran all test suites.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
