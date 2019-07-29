@@ -9,6 +9,7 @@ type precisErrorTypes =
   | Unassigned
   | UnicodeError
   | BidiError
+  | EmptyError
   | Context;
 
 type codePoint = int;
@@ -23,6 +24,9 @@ let toCodePointList = (s: string) => {
   };
   aux(s, 0, []);
 };
+
+let nonEmptyExn = (codePointList: list(codePoint)) =>
+  (List.length(codePointList) == 0) ? raise(PrecisError(EmptyError)) : codePointList;
 
 let fromCodePointList = (codePointList: list(codePoint)) => {
   Js.String.fromCodePointMany(ArrayLabels.of_list(codePointList));

@@ -3580,12 +3580,6 @@
   },
   {
     "profile": "OpaqueString",
-    "input": "",
-    "output": null,
-    "error": "DISALLOWED/empty"
-  },
-  {
-    "profile": "OpaqueString",
     "input": "#",
     "output": "#",
     "error": null
@@ -5366,12 +5360,6 @@
     "input": "\u03a3\u03a3",
     "output": "\u03a3\u03a3",
     "error": null
-  },
-  {
-    "profile": "NicknameCaseMapped",
-    "input": "",
-    "output": null,
-    "error": "DISALLOWED/empty"
   },
   {
     "profile": "NicknameCaseMapped",
@@ -7156,12 +7144,6 @@
     "input": "\u03a3\u03a3",
     "output": "\u03c3\u03c2",
     "error": null
-  },
-  {
-    "profile": "UsernameCaseMapped:ToLower",
-    "input": "",
-    "output": null,
-    "error": "DISALLOWED/empty"
   },
   {
     "profile": "UsernameCaseMapped:ToLower",
@@ -8949,12 +8931,6 @@
   },
   {
     "profile": "NicknameCasePreserved",
-    "input": "",
-    "output": null,
-    "error": "DISALLOWED/empty"
-  },
-  {
-    "profile": "NicknameCasePreserved",
     "input": "#",
     "output": "#",
     "error": null
@@ -10735,12 +10711,6 @@
     "input": "\u03a3\u03a3",
     "output": "\u03a3\u03a3",
     "error": null
-  },
-  {
-    "profile": "NicknameCaseMapped:ToLower",
-    "input": "",
-    "output": null,
-    "error": "DISALLOWED/empty"
   },
   {
     "profile": "NicknameCaseMapped:ToLower",
@@ -12528,12 +12498,6 @@
   },
   {
     "profile": "FreeFormClass",
-    "input": "",
-    "output": "",
-    "error": null
-  },
-  {
-    "profile": "FreeFormClass",
     "input": "#",
     "output": "#",
     "error": null
@@ -14313,12 +14277,6 @@
     "profile": "FreeFormClass",
     "input": "\u03a3\u03a3",
     "output": "\u03a3\u03a3",
-    "error": null
-  },
-  {
-    "profile": "IdentifierClass",
-    "input": "",
-    "output": "",
     "error": null
   },
   {
