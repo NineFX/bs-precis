@@ -36,8 +36,18 @@ let testSingle = elem => {
   }
 };
 
+let listToString = codePointList => {
+  let rec aux = (str, oldList) => {
+    switch oldList {
+      | [] => str
+      | [head, ...tail] => aux(str ++ string_of_int(head) ++ ", ", tail)
+      }
+  };
+  "[" ++ aux("", codePointList) ++ "]";
+};
+
 let testBuilder = elem => {
-  test(elem.profile ++" Test: "++elem.input, () => testSingle(elem));
+  test(elem.profile ++" Test: " ++ (elem.input |> PrecisUtils.toCodePointList |> listToString), () => testSingle(elem));
 };
 
 let test1 = () => {

@@ -7,17 +7,6 @@ open Jest;
 
 open Expect;
 
-let identifierTest1 = () => {
-  let given = {j|٠١٢٩|j};
-  let result = {j|٠١٢٩|j};
-  given
-  |> PrecisUtils.toCodePointList
-  |> PrecisClasses.identifierEnforce
-  |> PrecisUtils.fromCodePointList
-  |> expect
-  |> toEqual(result);
-};
-
 let codePointCheck = () => {
   let codePoints = [531454, 788451, 54483, 115221, 249866, 530580, 126, 32];
   let results = List.map(PrecisCodePoints.fromCodePoint, codePoints);
@@ -238,7 +227,6 @@ let checkLowerCase = () => {
 
 let () =
   describe("Precis Test", () => {
-    test("Identifier Class Test 1", identifierTest1);
     test("Identifier Class Test 2", identifierTest2);
     test("Identifier Class Test 3", identifierTest3);
     test("Identifier Class Test 4", identifierTest4);

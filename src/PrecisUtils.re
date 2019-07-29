@@ -8,7 +8,8 @@ type precisErrorTypes =
   | Disallowed
   | Unassigned
   | UnicodeError
-  | BidiError;
+  | BidiError
+  | Context;
 
 type codePoint = int;
 exception PrecisError(precisErrorTypes);
