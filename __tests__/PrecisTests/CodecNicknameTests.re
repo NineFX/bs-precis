@@ -12,15 +12,15 @@ let codecTests = [
   ("       j      ", "j")
 ];
 
-let testSingle = pair => {
+let testSingle = (input, output) => {
   expect(input |> PrecisProfiles.nickname) |> toBe(output);
 };
 
-let testBuilder = pair => {
-  let (input, output) = pair;
-  test("Nickname Test: " ++ input, () => testSingle(input, output); 
+let testBuilder = ((input, output)) => {
+  test("Nickname Test: " ++ input, () => testSingle(input, output));
+};
 
 let () =
   describe("Nickname Codec Tests", () => {
-    Belt.List.forEach(codecTests, testSingle);
-  };
+    Belt.List.forEach(codecTests, testBuilder);
+  });
