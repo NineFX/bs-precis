@@ -48,7 +48,6 @@ let usernameCasePreserved = (codePointList: list(PrecisUtils.codePoint)) => {
 let opaqueString = (codePointList: list(PrecisUtils.codePoint)) => {
   let str = codePointList
   |> PrecisMapping.spaceMap
-  |> PrecisMapping.additionalMapping
   |> PrecisUnorm.nfc;
   switch (PrecisClasses.freeformEnforce(str)) {
   | exception (PrecisUtils.PrecisError(PrecisUtils.Disallowed)) =>
