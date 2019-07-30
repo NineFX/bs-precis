@@ -46,18 +46,8 @@ let listToString = codePointList => {
   "[" ++ aux("", codePointList) ++ "]";
 };
 
-let testBuilder = elem => {
-  open PrecisUtils;
-  switch (test(elem.profile ++" Test: " ++ (elem.input |> PrecisUtils.toCodePointList |> listToString), () => testSingle(elem))) {
-    | exception PrecisError(Disallowed) => Js.log("Disallowed Error")
-    | exception PrecisError(Unassigned) => Js.log("Unassigned Error")
-    | exception PrecisError(UnicodeError) => Js.log("Unicode  Error")
-    | exception PrecisError(BidiError) => Js.log("Bidirection Error")
-    | exception PrecisError(EmptyError) => Js.log("Empty Field Error")
-    | exception PrecisError(Context) => Js.log("Caught context")
-    | _x => ()
-    };
-};
+let testBuilder = elem => 
+  test(elem.profile ++" Test: " ++ (elem.input |> PrecisUtils.toCodePointList |> listToString), () => testSingle(elem));
 
 let test1 = () => {
   expect(true) |> toBe(true);
