@@ -13,16 +13,16 @@ let identifierClass =
   let unassigned = List.mem(PrecisCodePoints.UNASSIGNED, precisMap);
   let contextO = List.mem(PrecisCodePoints.CONTEXTO, precisMap);
   let contextJ = List.mem(PrecisCodePoints.CONTEXTJ, precisMap);
-  allowUnassigned || !unassigned
-    ? switch (disallowed || freepval) {
-      | false =>
-        switch (contextO || contextJ) {
-          | false => codepoints
-          | true => raise(PrecisUtils.PrecisError(PrecisUtils.Context))
-          }
-      | true => raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
+  allowUnassigned || !unassigned ?
+    switch (disallowed || freepval) {
+    | false =>
+      switch (contextO || contextJ) {
+      | false => codepoints
+      | true => raise(PrecisUtils.PrecisError(PrecisUtils.Context))
       }
-    : raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned));
+    | true => raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
+    } :
+    raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned));
 };
 
 let identifierEnforce = (codepoints: list(PrecisUtils.codePoint)) =>
@@ -35,16 +35,16 @@ let freeformClass =
   let unassigned = List.mem(PrecisCodePoints.UNASSIGNED, precisMap);
   let contextO = List.mem(PrecisCodePoints.CONTEXTO, precisMap);
   let contextJ = List.mem(PrecisCodePoints.CONTEXTJ, precisMap);
-  allowUnassigned || !unassigned
-    ? switch (disallowed) {
-      | false =>
-        switch (contextO || contextJ) {
-          | false => codepoints
-          | true => raise(PrecisUtils.PrecisError(PrecisUtils.Context))
-          }
-      | true => raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
+  allowUnassigned || !unassigned ?
+    switch (disallowed) {
+    | false =>
+      switch (contextO || contextJ) {
+      | false => codepoints
+      | true => raise(PrecisUtils.PrecisError(PrecisUtils.Context))
       }
-    : raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned));
+    | true => raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
+    } :
+    raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned));
 };
 
 let freeformEnforce = (codepoints: list(PrecisUtils.codePoint)) =>

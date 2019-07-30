@@ -9,18 +9,17 @@
 [@bs.val] [@bs.module "unorm"]
 external nfc: string /* str */ => string = "nfc";
 let nfcString = nfc;
-let nfc = (codePointList: list(PrecisUtils.codePoint)) => {
+let nfc = (codePointList: list(PrecisUtils.codePoint)) =>
   codePointList
   |> PrecisUtils.fromCodePointList
   |> nfc
   |> PrecisUtils.toCodePointList;
-};
 
-[@bs.val] [@bs.module "unorm"] external nfkc: string /* str */ => string = "nfkc";
+[@bs.val] [@bs.module "unorm"]
+external nfkc: string /* str */ => string = "nfkc";
 let nfkcString = nfkc;
-let nfkc = (codePointList: list(PrecisUtils.codePoint)) => {
+let nfkc = (codePointList: list(PrecisUtils.codePoint)) =>
   codePointList
   |> PrecisUtils.fromCodePointList
   |> nfkc
   |> PrecisUtils.toCodePointList;
-};
