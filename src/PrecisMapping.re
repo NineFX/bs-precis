@@ -46,7 +46,6 @@ let stripSpaces = (codePoints: list(PrecisUtils.codePoint)) => {
 
 let maybeMapWidth = (x: PrecisUtils.codePoint) =>
   switch (x) {
-  // Fullwidth ASCII
   | cp when cp >= 0xFF01 && cp <= 0xFF5E => cp - 0xFEE0
   | cp when cp == 0xFF65 => 0x30FB
   | cp when cp == 0xFF66 => 0x30F2
