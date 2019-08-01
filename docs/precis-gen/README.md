@@ -14,3 +14,6 @@ Most of these do need to be modified by hand after.
 
 ## Files
 * [bidi-gen.py](./bidi-gen.md)
+* [generate-json-tests.py](./generate-json-tests.md)
+* [lowercase-gen.py](./lowercase-gen.md)
+* [precis-ranges.py](./precis-ranges.md)
