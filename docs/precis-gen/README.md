@@ -13,4 +13,4 @@ popd
 Most of these do need to be modified by hand after.
 
 ## Files
-* [bidi-gen.py]{./bidi-gen.md}
+* [bidi-gen.py](./bidi-gen.md)
