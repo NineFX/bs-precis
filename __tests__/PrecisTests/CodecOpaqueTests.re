@@ -9,7 +9,6 @@ let opaquesTest = [
 ];
 
 let opaquesThrow = [
-  {j||j},
 ];
 
 let testSingleOpaque = input =>
