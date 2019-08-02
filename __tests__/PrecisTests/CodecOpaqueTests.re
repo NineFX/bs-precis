@@ -6,11 +6,9 @@ let opaquesTest = [
   {j|Correct Horse Battery Staple|j},
   {j|πßå|j},
   {j|Jack of ♦s|j},
-  {j|foo bar|j},
 ];
 
 let opaquesThrow = [
-  {j|my cat is a &#x9;by|j},
   {j||j},
 ];
 

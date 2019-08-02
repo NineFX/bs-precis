@@ -19641,5 +19641,12 @@
     "input": "\u03a3\u03a3",
     "output": "\u03c3\u03c3",
     "error": null
+  },
+  {
+    "profile": "OpaqueString",
+    "input": "foo bar",
+    "output": "foo bar",
+    "error": null
   }
+    
 ]

@@ -51,7 +51,7 @@ let opaqueString = (codePointList: list(PrecisUtils.codePoint)) => {
     raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
   | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
     raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned))
-  | x => x
+  | x => x |> PrecisUtils.nonEmptyExn
   };
 };
 
