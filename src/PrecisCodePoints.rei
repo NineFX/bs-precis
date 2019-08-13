@@ -5,4 +5,4 @@ type precisTypes =
   | UNASSIGNED
   | FREEPVAL
   | DISALLOWED;
-let fromCodePoint: BsPrecis.PrecisUtils.codePoint => precisTypes;
+let fromCodePoint: PrecisUtils.codePoint => precisTypes;
