@@ -80,12 +80,48 @@ let katakanaMiddleDot = 0x30fb;
 let arabicIndicDigitsStart = 0x0660; 
 let arabicIndicDigitsEnd = 0x0669;
 
-let virama = _ => false;
+let viramas = [
+  0x094d,
+  0x09cd,
+  0x0a4d,
+  0x0acd,
+  0x0b4d,
+  0x0bcd,
+  0x0c4d,
+  0x0ccd,
+  0x0d3b,
+  0x0d3c,
+  0x0d4d,
+  0x0f84,
+  0x1039,
+  0x1714,
+  0x1bab,
+  0xa8c4,
+  0xa8f3,
+  0xa8f4,
+  0xa953,
+  0xaaf6,
+  0x10a3f,
+  0x11046,
+  0x110b9,
+  0x11133,
+  0x111c0,
+  0x11235,
+  0x112ea,
+  0x1134d,
+  0x11442,
+  0x114c2,
+  0x115bf,
+];
+
+let virama = cp => List.mem(cp, viramas);
 let zwnjRegexp = false;
-let greek = _ => false;
-let hebrew = _ => false;
-let hiragana = _ => false;
-let katakana = _ => false;
+let greek = cp => (cp >= 0x342 && cp <= 0x3ff) || (cp >= 0x1d26 && cp <= 0x1ffe);
+let hebrew = cp => (cp >= 0x0591 && cp <= 0x5f4);
+let hiragana = cp => (cp >= 0x3041 && cp <= 0x30a0);
+let hiragana = cps => List.fold_left((a, cp) => a && hiragana(cp), true, cps);
+let katakana = cp => (cp >= 0x3099 && cp <= 0x31ff);
+let katakana = cps => List.fold_left((a, cp) => a && katakana(cp), true, cps);
 let han = _ => false;
 // Check for arabic Indic Digits
 let arabicIndicDigits = List.fold_left((v, cp) =>
