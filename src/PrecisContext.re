@@ -1,4 +1,4 @@
-/** Precis/ContextO.re
+/** Precis/Context.re
  ** Copyright 2019 NineFX Inc.
  ** Justin Baum
  ** Based on Samuel Nichol's Original Implementation in Smeagol
@@ -63,15 +63,27 @@ let arabicIndicDigits = [0x0660, 0x0669];
 let virama = _ => true;
 let zwnjRegexp = true;
 
-let rec contextO = (codePointList, acc) => {
-  switch codePointList {
+let rec optimizedContext = (codePointList, precisCodePoints, acc, precisAcc) => {
+  open PrecisCodePoints;
+  switch precisCodePoints {
     | [] => true
-    // Zero Width Non Joiner
-    | [cp1, cp2, ...tail] when cp2 == zeroWidthNonJoiner => (virama(cp1) || zwnjRegexp) && contextO(tail, [cp2, cp1] @ acc)
-    // Zero Width Joiner
-    | [cp1, cp2, ...tail] when cp2 == zeroWidthJoiner => virama(cp1) && contextO(tail, [cp2, cp1] @ acc)
-    | [cp1, ...tail] => contextO(tail, [cp1] @ acc)
-    }
+    // PreJoiners
+    | [cp, CONTEXTO as contextCode | CONTEXTJ as contextCode, ...precisTail] =>
+      switch codePointList {
+        | [cp1, cp2, ...cpTail] when cp2 == zeroWidthNonJoiner => (virama(cp1) || zwnjRegexp) && optimizedContext(cpTail, precisTail, [cp2, cp1] @ acc, [contextCode, cp] @ precisAcc)
+        // Zero Width Joiner
+        | [cp1, cp2, ...cpTail] when cp2 == zeroWidthJoiner => virama(cp1) && optimizedContext(cpTail, precisTail, [cp2, cp1] @ acc, [contextCode, cp] @ precisAcc)
+        | _ => false
+      }
+    // PostJoiners
+    | [CONTEXTO as contextCode | CONTEXTJ as contextCode, cp, ...precisTail] =>
+      switch codePointList {
+        // PlaceHolder
+        | [cp1, cp2, ...cpTail] when cp1 != 0 => optimizedContext(cpTail, precisTail, [cp2, cp1] @ acc, [cp, contextCode] @ precisAcc)
+        | _ => false
+        }
+    | [cp, ...precisTail] => optimizedContext(List.tl(codePointList), precisTail, [List.hd(codePointList)] @ acc, [cp] @ precisAcc)
+  }
 };
 
-let contextO = codePointList => contextO(codePointList, []);
+let context = (codePointList) => optimizedContext(codePointList, codePointList |> List.map(PrecisCodePoints.fromCodePoint), [], []);
