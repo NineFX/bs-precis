@@ -15,10 +15,8 @@ let identifierClass =
   allowUnassigned || !unassigned ?
     switch (disallowed || freepval) {
     | false =>
-      switch (context) {
-      | true => codepoints
-      | false => raise(PrecisUtils.PrecisError(PrecisUtils.Context))
-      }
+      context ?
+        codepoints : raise(PrecisUtils.PrecisError(PrecisUtils.Context))
     | true => raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
     } :
     raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned));
@@ -36,10 +34,8 @@ let freeformClass =
   allowUnassigned || !unassigned ?
     switch (disallowed) {
     | false =>
-      switch (context) {
-      | true => codepoints
-      | false => raise(PrecisUtils.PrecisError(PrecisUtils.Context))
-      }
+      context ?
+        codepoints : raise(PrecisUtils.PrecisError(PrecisUtils.Context))
     | true => raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
     } :
     raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned));
