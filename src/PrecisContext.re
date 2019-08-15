@@ -54,34 +54,63 @@ Appendix A.2.  ZERO WIDTH JOINER
       If Canonical_Combining_Class(Before(cp)) .eq.  Virama Then True;
 */
 let middleDot = 0x00b7;
-let greekNumeralSign = 0x0375;
+/* 
+   Code point:
+      U+00B7
+
+   Overview:
+      Between 'l' (U+006C) characters only, used to permit the Catalan
+      character ela geminada to be expressed.
+
+   Lookup:
+      False
+
+   Rule Set:
+
+      False;
+
+      If Before(cp) .eq.  U+006C And
+
+         After(cp) .eq.  U+006C Then True;
+*/
+let greekLowerNumericalSign = 0x0375;
 let hebrewPunctuationGeresh = 0x05f3;
 let hebrewPunctuationGereshayim = 0x05f4;
 let katakanaMiddleDot = 0x30fb;
-let arabicIndicDigits = [0x0660, 0x0669];
+let arabicIndicDigitsStart = 0x0660; 
+let arabicIndicDigitsEnd = 0x0669;
 
-let virama = _ => true;
-let zwnjRegexp = true;
+let virama = _ => false;
+let zwnjRegexp = false;
+let greek = _ => false;
+let hebrew = _ => false;
+let hiragana = _ => false;
+let katakana = _ => false;
+let han = _ => false;
+// Check for arabic Indic Digits
+let arabicIndicDigits = List.fold_left((v, cp) =>
+  v && !(cp >= 0x06f0 && cp <= 0x06f9), true);
 
 let rec optimizedContext = (codePointList, precisCodePoints, acc, precisAcc) => {
   open PrecisCodePoints;
   switch precisCodePoints {
     | [] => true
     // PreJoiners
-    | [cp, CONTEXTO as contextCode | CONTEXTJ as contextCode, ...precisTail] =>
+    | [cc, CONTEXTO as contextCode | CONTEXTJ as contextCode, cc2, ...precisTail] =>
       switch codePointList {
-        | [cp1, cp2, ...cpTail] when cp2 == zeroWidthNonJoiner => (virama(cp1) || zwnjRegexp) && optimizedContext(cpTail, precisTail, [cp2, cp1] @ acc, [contextCode, cp] @ precisAcc)
+        //Pre
+        | [cp1, cp2, cp3, ...cpTail] when cp2 == middleDot => (cp1 == middleDot) && (cp1 == cp3) && optimizedContext(cpTail, precisTail, [cp3, cp2, cp1] @ acc, [cc2, contextCode, cc] @ precisAcc)
+        | [cp1, cp2, ...cpTail] when cp2 == zeroWidthNonJoiner => (virama(cp1) || zwnjRegexp) && optimizedContext(cpTail, [cc2] @  precisTail, [cp2, cp1] @ acc, [contextCode, cc] @ precisAcc)
         // Zero Width Joiner
-        | [cp1, cp2, ...cpTail] when cp2 == zeroWidthJoiner => virama(cp1) && optimizedContext(cpTail, precisTail, [cp2, cp1] @ acc, [contextCode, cp] @ precisAcc)
+        | [cp1, cp2, ...cpTail] when cp2 == zeroWidthJoiner => virama(cp1) && optimizedContext(cpTail, [cc2] @ precisTail, [cp2, cp1] @ acc, [contextCode, cc] @ precisAcc)
+        | [cp1, cp2, ...cpTail] when cp2 == hebrewPunctuationGeresh || cp2 == hebrewPunctuationGereshayim => hebrew(cp1) && optimizedContext(cpTail, [cc2] @ precisTail, [cp2, cp1] @ acc, [contextCode, cc] @ precisAcc)
+        // Post
+        | [cp1, cp2, cp3, ...cpTail] when cp2 == greekLowerNumericalSign => greek(cp3) && optimizedContext(cpTail, precisTail, [cp3, cp2, cp1] @ acc, [cc2, contextCode, cc] @ precisAcc)
+        // Total
+        | [cp1, cp2, ...cpTail] when cp2 == katakanaMiddleDot => (hiragana(acc @ codePointList) || katakana(acc @ codePointList) || han(acc @ codePointList)) && optimizedContext(cpTail, [cc2] @ precisTail, [cp2, cp1] @ acc, [contextCode, cc] @ precisAcc)
+        | [cp1, cp2, ...cpTail] when cp2 >= arabicIndicDigitsStart && cp2 <= arabicIndicDigitsEnd => arabicIndicDigits(acc @ codePointList) && optimizedContext(cpTail, [cc2] @ precisTail, [cp2, cp1] @ acc, [contextCode, cc] @ precisAcc)
         | _ => false
       }
-    // PostJoiners
-    | [CONTEXTO as contextCode | CONTEXTJ as contextCode, cp, ...precisTail] =>
-      switch codePointList {
-        // PlaceHolder
-        | [cp1, cp2, ...cpTail] when cp1 != 0 => optimizedContext(cpTail, precisTail, [cp2, cp1] @ acc, [cp, contextCode] @ precisAcc)
-        | _ => false
-        }
     | [cp, ...precisTail] => optimizedContext(List.tl(codePointList), precisTail, [List.hd(codePointList)] @ acc, [cp] @ precisAcc)
   }
 };

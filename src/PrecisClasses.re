@@ -11,14 +11,13 @@ let identifierClass =
   let disallowed = List.mem(PrecisCodePoints.DISALLOWED, precisMap);
   let freepval = List.mem(PrecisCodePoints.FREEPVAL, precisMap);
   let unassigned = List.mem(PrecisCodePoints.UNASSIGNED, precisMap);
-  let contextO = List.mem(PrecisCodePoints.CONTEXTO, precisMap);
-  let contextJ = List.mem(PrecisCodePoints.CONTEXTJ, precisMap);
+  let context = PrecisContext.context(codepoints);
   allowUnassigned || !unassigned ?
     switch (disallowed || freepval) {
     | false =>
-      switch (contextO || contextJ) {
-      | false => codepoints
-      | true => raise(PrecisUtils.PrecisError(PrecisUtils.Context))
+      switch (context) {
+      | true => codepoints
+      | false => raise(PrecisUtils.PrecisError(PrecisUtils.Context))
       }
     | true => raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
     } :
@@ -33,14 +32,13 @@ let freeformClass =
   let precisMap = List.map(PrecisCodePoints.fromCodePoint, codepoints);
   let disallowed = List.mem(PrecisCodePoints.DISALLOWED, precisMap);
   let unassigned = List.mem(PrecisCodePoints.UNASSIGNED, precisMap);
-  let contextO = List.mem(PrecisCodePoints.CONTEXTO, precisMap);
-  let contextJ = List.mem(PrecisCodePoints.CONTEXTJ, precisMap);
+  let context = PrecisContext.context(codepoints);
   allowUnassigned || !unassigned ?
     switch (disallowed) {
     | false =>
-      switch (contextO || contextJ) {
-      | false => codepoints
-      | true => raise(PrecisUtils.PrecisError(PrecisUtils.Context))
+      switch (context) {
+      | true => codepoints
+      | false => raise(PrecisUtils.PrecisError(PrecisUtils.Context))
       }
     | true => raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
     } :
