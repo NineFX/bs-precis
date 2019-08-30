@@ -20,7 +20,7 @@ type testCase struct {
 }
 
 func main() {
-	f, err := os.Open("golden.json")
+	f, err := os.Open("__tests__/PrecisTests/golden.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -34,7 +34,7 @@ func main() {
 
 	for i := 0; d.More(); i++ {
 		var tc testCase
-		switch err := d.Decoder(&tc); err {
+		switch err := d.Decode(&tc); err {
 		case io.EOF:
 			return
 		case nil:
@@ -44,26 +44,27 @@ func main() {
 	}
 }
 
-func runTest(tc testCase) error {
+func runTest(tc testCase) *testCase {
 	var p *precis.Profile
 	switch tc.Profile {
 	case "Nickname":
 		p = precis.Nickname
 	case "UsernameCaseMapped", "UsernameCaseMapped:ToLower":
-		P = precis.UsernameCaseMapped
+		p = precis.UsernameCaseMapped
 	default:
 		return nil
 	}
 	out, err := p.String(tc.Input)
-
+	errMessage := err.Error()
 	results := &testCase{
 		Input:   tc.Input,
 		Profile: tc.Profile,
 		Output:  out,
-		Error:   err,
+		Error:   errMessage,
 	}
 	switch {
 	case err != nil:
 	case err == nil:
 	}
+	return results
 }
