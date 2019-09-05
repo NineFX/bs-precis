@@ -6,6 +6,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"golang.org/x/text/secure/precis"
 	"io"
 	"log"
@@ -32,19 +33,23 @@ func main() {
 		log.Fatal(err)
 	}
 
+	var list []testCase
+
 	for i := 0; d.More(); i++ {
+		printSlice(list)
 		var tc testCase
 		switch err := d.Decode(&tc); err {
 		case io.EOF:
 			return
 		case nil:
+			list = append(list, runTest(tc))
 		default:
 			log.Fatal(err)
 		}
 	}
 }
 
-func runTest(tc testCase) *testCase {
+func runTest(tc testCase) testCase {
 	var p *precis.Profile
 	switch tc.Profile {
 	case "Nickname":
@@ -52,7 +57,7 @@ func runTest(tc testCase) *testCase {
 	case "UsernameCaseMapped", "UsernameCaseMapped:ToLower":
 		p = precis.UsernameCaseMapped
 	default:
-		return nil
+		log.Fatal(nil)
 	}
 	out, err := p.String(tc.Input)
 	errMessage := err.Error()
@@ -62,9 +67,8 @@ func runTest(tc testCase) *testCase {
 		Output:  out,
 		Error:   errMessage,
 	}
-	switch {
-	case err != nil:
-	case err == nil:
-	}
-	return results
+	return *results
+}
+func printSlice(s []testCase) {
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
