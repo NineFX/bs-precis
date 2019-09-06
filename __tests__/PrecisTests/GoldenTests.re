@@ -59,7 +59,7 @@ let () =
     let data = TestUtils.readFileSync("__tests__/PrecisTests/golden.json") |> Json.parseOrRaise;
     let tests = Json.Decode.list(decoder, data);
     Belt.List.forEach(tests, testBuilder);
-    let data2 = TestUtils.readFileSync("__tests__/PrecisTests/gogolden2.json") |> Json.parseOrRaise;
+    let data2 = TestUtils.readFileSync("__tests__/PrecisTests/gogolden.json") |> Json.parseOrRaise;
     let tests2 = Json.Decode.list(decoder, data2);
     Belt.List.forEach(tests2, testBuilder);
   });

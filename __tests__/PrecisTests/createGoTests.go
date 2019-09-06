@@ -13,14 +13,14 @@ import (
 )
 
 type testCase struct {
-	Profile string `json:"profile"`
-	Input   string `json:"input"`
-	Output  string `json:"output"`
-	Error   string `json:"error"`
+	Profile string  `json:"profile"`
+	Input   string  `json:"input"`
+	Output  *string `json:"output"`
+	Error   string  `json:"error"`
 }
 
 func main() {
-	f, err := os.Open("__tests__/PrecisTests/golden2.json")
+	f, err := os.Open("__tests__/PrecisTests/golden.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -58,12 +58,13 @@ func main() {
 			continue
 		}
 		out, err := p.String(tc.Input)
-		tc.Output = out
 		switch err {
 		case nil:
 			tc.Error = ""
+			tc.Output = &out
 		default:
 			tc.Error = err.Error()
+			tc.Output = nil
 		}
 		testCases = jsonMarshalling(tc, testCases)
 
