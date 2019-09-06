@@ -33,6 +33,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	var testCases []testCase
 	for i := 0; d.More(); i++ {
 		var tc testCase
 		d.Decode(&tc)
@@ -56,17 +57,22 @@ func main() {
 		default:
 			continue
 		}
-		var errString string
 		out, err := p.String(tc.Input)
+		tc.Output = out
 		switch err {
 		case nil:
-			errString = "null"
-			out = `"` + out + `"`
+			tc.Error = ""
 		default:
-			out = "null"
-			errString = "\"" + err.Error() + "\""
+			tc.Error = err.Error()
 		}
+		testCases = jsonMarshalling(tc, testCases)
 
-		fmt.Printf(`{"profile": "%s", "input": "%s", "output": %s, "error": %s},`, tc.Profile, tc.Input, out, errString)
 	}
+	encJson, _ := json.Marshal(testCases)
+	fmt.Println(string(encJson))
+}
+
+// Not sure if this is exactly the golang way to do it, but giving it a shot
+func jsonMarshalling(tc testCase, jsonList []testCase) []testCase {
+	return append(jsonList, tc)
 }
