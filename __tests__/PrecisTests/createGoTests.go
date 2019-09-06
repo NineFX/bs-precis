@@ -20,7 +20,7 @@ type testCase struct {
 }
 
 func main() {
-	f, err := os.Open("__tests__/PrecisTests/golden.json")
+	f, err := os.Open("__tests__/PrecisTests/golden2.json")
 	if err != nil {
 		log.Fatal(err)
 	}
