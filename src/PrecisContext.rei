@@ -1,1 +1,1 @@
-let context: list(BsPrecis.PrecisUtils.codePoint) => bool;
+let context: list(PrecisUtils.codePoint) => bool;
