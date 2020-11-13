@@ -36,9 +36,18 @@ let testSingle = elem => {
   }
 };
 
-let testBuilder = elem => {
-  test(elem.profile ++" Test: "++elem.input, () => testSingle(elem));
+let listToString = codePointList => {
+  let rec aux = (str, oldList) => {
+    switch oldList {
+      | [] => str
+      | [head, ...tail] => aux(str ++ string_of_int(head) ++ ", ", tail)
+      }
+  };
+  "[" ++ aux("", codePointList) ++ "]";
 };
+
+let testBuilder = elem => 
+  test(elem.profile ++" Test: " ++ (elem.input |> PrecisUtils.toCodePointList |> listToString), () => testSingle(elem));
 
 let test1 = () => {
   expect(true) |> toBe(true);
@@ -50,4 +59,7 @@ let () =
     let data = TestUtils.readFileSync("__tests__/PrecisTests/golden.json") |> Json.parseOrRaise;
     let tests = Json.Decode.list(decoder, data);
     Belt.List.forEach(tests, testBuilder);
+    let data2 = TestUtils.readFileSync("__tests__/PrecisTests/gogolden.json") |> Json.parseOrRaise;
+    let tests2 = Json.Decode.list(decoder, data2);
+    Belt.List.forEach(tests2, testBuilder);
   });

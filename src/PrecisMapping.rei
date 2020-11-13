@@ -18,8 +18,7 @@ let lastLetterMap:
 let lowerCaseMap:
   PrecisUtils.codePoint => PrecisUtils.codePoint;
 let replaceTrailers:
-  (list(PrecisUtils.codePoint),
-  list(PrecisUtils.codePoint)) =>
+  list(PrecisUtils.codePoint) =>
   list(PrecisUtils.codePoint);
 let toLower:
   list(PrecisUtils.codePoint) =>

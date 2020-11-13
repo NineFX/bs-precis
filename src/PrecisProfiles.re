@@ -10,57 +10,54 @@ let bidi = (codePointList: list(PrecisUtils.codePoint)) => {
     List.map(PrecisBidi.getDirectionProperty, codePointList);
   List.mem(PrecisBidi.R, directionList)
   || List.mem(PrecisBidi.AL, directionList)
-  || List.mem(PrecisBidi.AN, directionList)
-    ? PrecisBidi.validate(codePointList) : true;
+  || List.mem(PrecisBidi.AN, directionList) ?
+    PrecisBidi.validate(codePointList) : true;
 };
 
 let usernameCaseMapped = (codePointList: list(PrecisUtils.codePoint)) => {
-  let str = codePointList
+  let str =
+    codePointList
     |> PrecisMapping.mapWidth
     |> PrecisMapping.toLower
     |> PrecisUnorm.nfc;
-  bidi(str)
-    ? switch (PrecisClasses.identifierEnforce(str)) {
-      | exception (PrecisUtils.PrecisError(PrecisUtils.Disallowed)) =>
-        raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
-      | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
-        raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned))
-      | x => x
-      }
-    : raise(PrecisUtils.PrecisError(PrecisUtils.BidiError));
+  bidi(str) ?
+    switch (PrecisClasses.identifierEnforce(str)) {
+    | exception (PrecisUtils.PrecisError(PrecisUtils.Disallowed)) =>
+      raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
+    | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
+      raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned))
+    | x => x |> PrecisUtils.nonEmptyExn
+    } :
+    raise(PrecisUtils.PrecisError(PrecisUtils.BidiError));
 };
 
 let usernameCasePreserved = (codePointList: list(PrecisUtils.codePoint)) => {
-  let str = codePointList
-  |> PrecisMapping.mapWidth
-  |> PrecisUnorm.nfc;
-  bidi(str)
-    ? switch (PrecisClasses.identifierEnforce(str)) {
-      | exception (PrecisUtils.PrecisError(PrecisUtils.Disallowed)) =>
-        raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
-      | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
-        raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned))
-      | x => x
-      }
-    : raise(PrecisUtils.PrecisError(PrecisUtils.BidiError));
+  let str = codePointList |> PrecisMapping.mapWidth |> PrecisUnorm.nfc;
+  bidi(str) ?
+    switch (PrecisClasses.identifierEnforce(str)) {
+    | exception (PrecisUtils.PrecisError(PrecisUtils.Disallowed)) =>
+      raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
+    | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
+      raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned))
+    | x => x |> PrecisUtils.nonEmptyExn
+    } :
+    raise(PrecisUtils.PrecisError(PrecisUtils.BidiError));
 };
 
 let opaqueString = (codePointList: list(PrecisUtils.codePoint)) => {
-  let str = codePointList
-  |> PrecisMapping.spaceMap
-  |> PrecisMapping.additionalMapping
-  |> PrecisUnorm.nfc;
+  let str = codePointList |> PrecisMapping.spaceMap |> PrecisUnorm.nfc;
   switch (PrecisClasses.freeformEnforce(str)) {
   | exception (PrecisUtils.PrecisError(PrecisUtils.Disallowed)) =>
     raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
   | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
     raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned))
-  | x => x
+  | x => x |> PrecisUtils.nonEmptyExn
   };
 };
 
 let nickname = (codePointList: list(PrecisUtils.codePoint)) => {
-  let str = codePointList
+  let str =
+    codePointList
     |> PrecisMapping.spaceMap
     |> PrecisMapping.stripSpaces
     |> PrecisMapping.toLower
@@ -70,7 +67,7 @@ let nickname = (codePointList: list(PrecisUtils.codePoint)) => {
     raise(PrecisUtils.PrecisError(PrecisUtils.Disallowed))
   | exception (PrecisUtils.PrecisError(PrecisUtils.Unassigned)) =>
     raise(PrecisUtils.PrecisError(PrecisUtils.Unassigned))
-  | x => x
+  | x => x |> PrecisUtils.nonEmptyExn
   };
 };
 
@@ -88,4 +85,7 @@ let opaqueString = (s: string) =>
   |> PrecisUtils.fromCodePointList;
 
 let nickname = (s: string) =>
-  PrecisUtils.toCodePointList(s) |> nickname |> PrecisUtils.fromCodePointList;
+  PrecisUtils.toCodePointList(s)
+  |> nickname
+  |> nickname
+  |> PrecisUtils.fromCodePointList;

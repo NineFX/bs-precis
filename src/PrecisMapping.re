@@ -46,7 +46,7 @@ let stripSpaces = (codePoints: list(PrecisUtils.codePoint)) => {
 
 let maybeMapWidth = (x: PrecisUtils.codePoint) =>
   switch (x) {
-  // Fullwidth ASCII
+  | cp when cp <= 0xFF00 => cp // optimization
   | cp when cp >= 0xFF01 && cp <= 0xFF5E => cp - 0xFEE0
   | cp when cp == 0xFF65 => 0x30FB
   | cp when cp == 0xFF66 => 0x30F2
@@ -167,12 +167,13 @@ let trim = (codePointList: list(PrecisUtils.codePoint)) => {
   aux(codePointList, []);
 };
 
-let lastLetterMap = (point: PrecisUtils.codePoint) =>
+let lastLetterMap = (point: PrecisUtils.codePoint) => {
   switch point {
     | 931
     | 963 => 962
     | x => x
   };
+};
 
 let lowerCaseMap = (point: PrecisUtils.codePoint) =>
   if (point < 7788) {
@@ -5810,14 +5811,24 @@ let lowerCaseMap = (point: PrecisUtils.codePoint) =>
     };
   };
 
-let rec replaceTrailers = (newList, codePointList) => {
-  switch codePointList {
-    | [space, x, ...tail] => replaceTrailers([x |> lastLetterMap, space] @ newList, tail)
-    | [x, ...tail] => replaceTrailers([x] @ newList, tail)
-    | [] => List.rev(newList)
+let replaceTrailers = (codePointList) => {
+  let rec aux = (newList, codePointList) => {
+    switch codePointList {
+      | [x] => aux([x |> lastLetterMap] @ newList, [])
+      | [x, space_, ...tail] when space_ == space => aux([space, x |> lastLetterMap] @ newList, tail)
+      | [x, ...tail] => aux([x] @ newList, tail)
+      | [] => List.rev(newList)
+    }
   }
+  and aux2 = (newList, codePointList) => {
+    switch codePointList {
+      | [x, ...tail] => aux([x] @ newList, tail)
+      | [] => List.rev(newList)
+      }
+  };
+  aux2([], codePointList);
 };
 
 let toLower = (codePointList: list(PrecisUtils.codePoint)) => {
-  codePointList |> List.map(lowerCaseMap) |> replaceTrailers([]);
+  codePointList |> List.map(lowerCaseMap) |> replaceTrailers;
 };
